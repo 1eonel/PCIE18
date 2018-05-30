@@ -1,7 +1,6 @@
 //Pruebas para Registro Desplazable 4 bits
 //Bryan Cervantes Ramirez- B31726
-`include "sintetizado.v"
-`include "cmos_cells.v"
+`include "MuxCtrl.v"
 module test;
 
 reg clk;
@@ -22,7 +21,7 @@ wire [7:0] outmux;
   $monitor ("%g\t      %h	   	%h          %h       %h            ",
   $time, data ,enb ,S ,outmux);
 
-		$display("-----LEONEL KYC-----");
+		$display("-----Test Mux de Control----");
 		//Valores iniciales:
 		clk <=0;
 		enb <= 1;
@@ -32,19 +31,19 @@ wire [7:0] outmux;
 		#8
 		S <= 4'b0010;
 		#8
-		$display("-----LEONEL STP-----");
+		$display("-----STP Signal-----");
 		S <= 4'b0100;
 		#6
-		$display("-----LEONEL SDP-----");
+		$display("-----SDP Signal-----");
 		S <= 4'b0101;
 		#6
-		$display("-----LEONEL END-----");
+		$display("-----END Signal-----");
 		S <= 4'b0110;
 		#6
-		$display("-----LEONEL IDL-----");
+		$display("-----IDL Signal-----");
 		S <= 4'b1001;
 		#6
-		$display("-----LEONEL SKP-----");
+		$display("-----SKṔ Signal-----");
 		S <= 4'b0011;
 		#6
 
