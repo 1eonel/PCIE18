@@ -4,7 +4,7 @@
 `include "striping.v"
 `include "ParaleloSerial.v"
 
-module muxstriping (clk, clk2, data, enb, reset, S, L0, L1, L2, L3);
+module Tx (clk, clk2, data, enb, reset, S, L0, L1, L2, L3);
   input clk;
   input clk2;
   input [7:0] data;
@@ -32,4 +32,4 @@ module muxstriping (clk, clk2, data, enb, reset, S, L0, L1, L2, L3);
   ParaleloSerial PS1 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL1), salida(L1));
   ParaleloSerial PS2 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL2), salida(L2));
   ParaleloSerial PS3 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL3), salida(L3));
-endmodule  
+endmodule
