@@ -8,14 +8,13 @@ module ParaleloSerial(
   salida
 );
 
-parameter PwrC=0;
 parameter cantBits = 8;
 
 input wire clk;
 input wire enb;
 input wire reset;
-input wire clk10;
-input wire [cantBits-1:0] entrada;
+input wire clk8;
+input wire [7:0] entrada;
 output reg salida;
 reg [3:0] contador;
 
@@ -25,7 +24,7 @@ end
 
 always @(posedge clk) begin
 
-  if (rst) begin
+  if (reset) begin
     contador <= 0;
   end else if(enb) begin
     contador <= contador == 0 ? cantBits-1 : contador-1;

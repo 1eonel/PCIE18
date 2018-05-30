@@ -18,13 +18,13 @@ module GeneradorClk(
 
   always @ (posedge clk) begin
     if (rst) begin
-      cnt10 <= 3'd4;
+      cnt10 <= 3'd3;
       clk10 <= 1'b0;
       clk20 <= 1'b0;
       clk40 <= 1'b0;
     end else begin
       if (enb) begin
-        if (cnt10 >= 3'd4) begin
+        if (cnt10 >= 3'd3) begin
           cnt10 <= 3'd0;
           clk10 <= ~clk10;
           if (~clk10) clk20 <= ~clk20;

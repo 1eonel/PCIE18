@@ -1,4 +1,4 @@
 all:
-	iverilog -o bin/pruebaSerPar testSerialParalelo.v
-	vvp bin/pruebaSerPar
-	gtkwave gtkws/testSerPar.vcd
+	iverilog -o bin/pruebaParSer testParSer.v
+	vvp bin/pruebaParSer
+	gtkwave gtkws/testParSer.vcd
