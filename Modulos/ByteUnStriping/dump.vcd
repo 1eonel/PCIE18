@@ -1,0 +1,78 @@
+$date
+	Wed May 30 00:55:21 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module TBunstriping $end
+$var wire 8 ! toDemux [7:0] $end
+$var reg 8 " FL0 [7:0] $end
+$var reg 8 # FL1 [7:0] $end
+$var reg 8 $ FL2 [7:0] $end
+$var reg 8 % FL3 [7:0] $end
+$var reg 1 & clk $end
+$scope module unst1 $end
+$var wire 8 ' FL0 [7:0] $end
+$var wire 8 ( FL1 [7:0] $end
+$var wire 8 ) FL2 [7:0] $end
+$var wire 8 * FL3 [7:0] $end
+$var wire 1 & clk $end
+$var reg 1 + D $end
+$var reg 2 , c [1:0] $end
+$var reg 8 - toDemux [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx -
+bx ,
+x+
+bx *
+bx )
+bx (
+b11111011 '
+0&
+bx %
+bx $
+bx #
+b11111011 "
+bx !
+$end
+#1000
+b1 ,
+b11111011 !
+b11111011 -
+1+
+1&
+#2000
+0&
+b11111111 #
+b11111111 (
+#3000
+b10 ,
+b11111111 !
+b11111111 -
+1&
+#4000
+0&
+b11111111 $
+b11111111 )
+#5000
+b11 ,
+1&
+#6000
+0&
+b11111101 %
+b11111101 *
+#7000
+b0 ,
+0+
+b11111101 !
+b11111101 -
+1&
+#8000
+0&

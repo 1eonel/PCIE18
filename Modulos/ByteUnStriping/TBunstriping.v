@@ -17,10 +17,17 @@ module TBunstriping;
     always #1 clk = !clk; //clk sgl.
 
     initial begin
+    $dumpvars;    
     $display ("time\t    clk,    TL0   ,    TL1   ,   TL2   ,   TL3  , tomux ");
     $monitor ("%g\t      %b       %h         %h        %h       %h       %h",
     $time, clk, FL0, FL1, FL2,FL3, toDemux);
-
+    $display ("Se prueba la secuencia:");
+    $display ("START(STP = FB)");
+    $display ("DATOS(ff)");
+    $display ("DATOS(ff)");
+    $display ("END(fd)");
+    $display ("-------------------");
+    
     clk<=0;
     FL0 = STP;
     #2
