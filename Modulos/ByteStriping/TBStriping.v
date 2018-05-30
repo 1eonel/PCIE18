@@ -14,7 +14,7 @@ module TBStriping;
     always #1 clk = !clk; //clk sgl.
 
     initial begin
-    $display ("test");
+    $display ("------------------------------test striping-------------------------------");
     $dumpvars;
     $display ("time\t    clk,      fromMux,    TL0   ,    TL1   ,   TL2   ,   TL3   ");
     $monitor ("%g\t      %b          %h         %h        %h         %h        %h",
@@ -22,24 +22,24 @@ module TBStriping;
 
     clk <= 0;
     #4
-    $display ("dsadsad");
+    $display ("------------------------------Agregamos SKIPS (SKP = 1C) -------------------------------");
     fromMux = 8'h1C; //SKP
     #6
-        $display ("dsadsad");
+        $display ("------------------------------Agregamos IDLE (IDL = 7C) -------------------------------");
 
     fromMux = 8'h7C; //IDLE
     #6
-        $display ("dsadsad");
+        $display ("------------------------------Agregamos START (STP = FB) -------------------------------");
 
     fromMux = 8'hFB; //STP
     #2
-    $display ("stp");
+    $display ("------------Agregamos 6 bytes seguidos de DATOS (en este caso FF simbolizan datos) ------------");
     fromMux = 8'hFF;
     #12
-    $display ("ff");
+    $display ("------------------------------Agregamos END (END = ) -------------------------------");
     fromMux = 8'hFD;
     #2
-    $display ("end FD");
+    $display ("Podemos ver como inicialmente se detecta un START, se manda al LANE0, y se siguen recibiendo datos hasta que se recibe el END");
     $finish;
     end
 
