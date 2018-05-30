@@ -4,13 +4,11 @@ input clk,
 input [7:0] data,
 input enb,
 input [3:0] S,
-output [7:0] outmux,
-
+output [7:0] outmux
 
 );
 
 reg outmux;
-reg Sout;
 
 parameter COM = 8'hBC,PAD = 8'hF7,SKP = 8'h1C,STP = 8'hFB, SDP = 8'h5C ;
 parameter END = 8'hFD,EDB = 8'hFE,FTS = 8'h3C,IDL = 8'h7C;
