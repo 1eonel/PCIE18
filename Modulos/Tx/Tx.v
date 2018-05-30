@@ -19,17 +19,17 @@ module Tx (clk, clk2, data, enb, reset, S, L0, L1, L2, L3);
 
   wire [7:0] outmux;
 
-  reg [7:0] TL0;
-  reg [7:0] TL1;
-  reg [7:0] TL2;
-  reg [7:0] TL3;
+  wire [7:0] TL0;
+  wire [7:0] TL1;
+  wire [7:0] TL2;
+  wire [7:0] TL3;
 
   MuxCtrl Mux1(.clk(clk), .data(data), .enb(enb), .S(S), .outmux(outmux));
 
   striping byteStp (.clk(clk), .fromMux(outmux), .TL0(TL0), .TL1(TL1), .TL2(TL2),.TL3(TL3));
 
-  ParaleloSerial PS0 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL0), salida(L0));
-  ParaleloSerial PS1 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL1), salida(L1));
-  ParaleloSerial PS2 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL2), salida(L2));
-  ParaleloSerial PS3 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL3), salida(L3));
+  ParaleloSerial PS0 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL0), .salida(L0));
+  ParaleloSerial PS1 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL1), .salida(L1));
+  ParaleloSerial PS2 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL2), .salida(L2));
+  ParaleloSerial PS3 (.clk(clk2), .reset(reset), .enb(enb), .clk8(clk), .entrada(TL3), .salida(L3));
 endmodule
