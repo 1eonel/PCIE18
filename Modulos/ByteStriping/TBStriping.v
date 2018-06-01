@@ -34,8 +34,18 @@ module TBStriping;
     fromMux = 8'hFB; //STP
     #2
     $display ("------------Agregamos 6 bytes seguidos de DATOS (en este caso FF simbolizan datos) ------------");
-    fromMux = 8'hFF;
-    #12
+    fromMux = 8'h01;
+    #2
+    fromMux = 8'h02;
+    #2
+    fromMux = 8'h03;
+    #2
+    fromMux = 8'h04;
+    #2
+    fromMux = 8'h05;
+    #2
+    fromMux = 8'h06;
+    #2
     $display ("------------------------------Agregamos END (END = ) -------------------------------");
     fromMux = 8'hFD;
     #2

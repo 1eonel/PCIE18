@@ -27,62 +27,62 @@ parameter END = 8'hFD,EDB = 8'hFE,FTS = 8'h3C,IDL = 8'h7C;
 always @ (posedge clk) begin
       if (D) begin
             if (fromMux == END) begin
-            TL3 = fromMux;
-            D=0;
-            c = 2'b00;
+            TL3<= fromMux;
+            D<=0;
+            c <= 2'b00;
             end else begin
                   if (c==2'b00) begin
-                        TL0 = fromMux;
-                        c = c+1;
+                        TL0 <= fromMux;
+                        c <= c+1;
                   end else if (c==2'b01) begin
-                        TL1 = fromMux;
-                        c = c+1;
+                        TL1 <= fromMux;
+                        c <= c+1;
                         
                   end else if (c==2'b10) begin
-                        TL2 = fromMux;
-                        c = c+1;
+                        TL2 <= fromMux;
+                        c <= c+1;
                         
                   end else if (c==2'b11) begin
-                        TL3 = fromMux;
-                        c = c+1;
+                        TL3 <= fromMux;
+                        c <= c+1;
                         end  
             end //end else de            
       end else begin
       
             if (fromMux == STP) begin
-            D=1;
-            TL0 = fromMux;
-            c = 2'b01;
+            D<=1;
+            TL0 <= fromMux;
+            c <= 2'b01;
             end  
             if (fromMux == SDP) begin
-            D=1;
-            TL0 = fromMux;
-            c = c+1;
+            D<=1;
+            TL0 <= fromMux;
+            c <= c+1;
             end
 
             if (fromMux == IDL) begin
-            c = 2'b00;
-            TL0 = fromMux;
-            TL1 = fromMux;
-            TL2 = fromMux;
-            TL3 = fromMux;
+            c <= 2'b00;
+            TL0 <= fromMux;
+            TL1 <= fromMux;
+            TL2 <= fromMux;
+            TL3 <= fromMux;
             end
 
             if (fromMux == COM) begin
-            c = 2'b00;
-            TL0 = fromMux;
-            TL1 = fromMux;
-            TL2 = fromMux;
-            TL3 = fromMux;
+            c <= 2'b00;
+            TL0 <= fromMux;
+            TL1 <= fromMux;
+            TL2 <= fromMux;
+            TL3 <= fromMux;
             end
 
 
             if (fromMux == SKP) begin
-            c = 2'b00;
-            TL0 = fromMux;
-            TL1 = fromMux;
-            TL2 = fromMux;
-            TL3 = fromMux;
+            c <= 2'b00;
+            TL0 <= fromMux;
+            TL1 <= fromMux;
+            TL2 <= fromMux;
+            TL3 <= fromMux;
             end
       end  //else de if (D)
 
